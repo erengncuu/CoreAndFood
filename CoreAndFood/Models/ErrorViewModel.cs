@@ -1,4 +1,4 @@
-namespace CoreAndFood.Data.Models
+namespace CoreAndFood.Models
 {
     public class ErrorViewModel
     {
