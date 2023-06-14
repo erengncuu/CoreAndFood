@@ -7,9 +7,7 @@
     <b>Food Name</b>
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
     <br />
-    <b>Food Descriptrion</b>
-    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
-    <br />
+
     <b>Food Price</b>
     @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
     <br />
@@ -21,6 +19,9 @@
     <br />
     <b>Category</b>
     @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <b>Food Descriptrion</b>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
     <br />
     <button class="btn btn-primary">save</button>
 
