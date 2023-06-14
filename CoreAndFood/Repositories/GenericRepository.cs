@@ -1,4 +1,5 @@
 ﻿using CoreAndFood.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreAndFood.Repositories
 {
@@ -29,6 +30,11 @@ namespace CoreAndFood.Repositories
 		{
 			c.Set<T>().Find(id);
 			c.SaveChanges();
+		}
+		public List<T> TList(String p)
+		{
+			return c.Set<T>().Include(p).ToList();
+			
 		}
 	}
 }

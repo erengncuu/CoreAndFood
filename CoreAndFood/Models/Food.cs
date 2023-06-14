@@ -10,6 +10,6 @@ public class Food
 
     public int Stock { get; set; }
 
-    public int CategoryId { get; set; }
+    public int? CategoryId { get; set; }
     public virtual Category Category { get; set; } //ilişkiyi kurabilmek için
 }

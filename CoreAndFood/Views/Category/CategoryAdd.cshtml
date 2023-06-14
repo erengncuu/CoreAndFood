@@ -1,0 +1,11 @@
+﻿@model CoreAndFood.Models.Category
+@{
+}
+
+<h2>Category Add Page</h2>
+<br />
+@using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.CategoryName)
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+}
