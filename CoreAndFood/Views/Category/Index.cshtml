@@ -19,7 +19,7 @@
             <td>@x.CategoryName</td>
             <td>@x.Status</td>
             <td><a class="btn btn-danger">Delete</a></td>
-            <td><a href="#" class="btn btn-success">Update</a></td>
+            <td><a asp-controller="Category" asp-action="CategoryGet" asp-route-id="@x.CategoryId" class="btn btn-success">Update</a></td>
         </tr>
     }
 </table>
