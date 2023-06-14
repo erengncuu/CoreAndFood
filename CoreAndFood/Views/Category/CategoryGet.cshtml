@@ -2,7 +2,7 @@
 
 <h2>Category Add Page</h2>
 <br />
-@using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
+@using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post))
 {
     <b>Category Id</b>
     @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
