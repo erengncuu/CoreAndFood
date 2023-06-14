@@ -31,5 +31,12 @@ namespace CoreAndFood.Controllers
 			foodRepository.TAdd(f);
 			return RedirectToAction("Index");
 		}
+		public IActionResult FoodDelete(int id)
+		{
+			
+			foodRepository.TRemove(new Food {FoodId=id});
+			return RedirectToAction("Index");
+		 }
+
     }
 }
