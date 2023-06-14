@@ -6,6 +6,12 @@
 <br />
 @using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
 {
-    @Html.LabelFor(x => x.CategoryName)
+    <b>Category Name</b>
     @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <b>Category Descriptrion</b>
+    @Html.TextBoxFor(x => x.CategoryDescription, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">save</button>
+
 }

@@ -16,9 +16,9 @@
         <tr>
             <td>@x.CategoryId</td>
             <td>@x.CategoryName</td>
-            <td><a href="#" class="btn btn-danger">Delete</a></td>
+            <td><a  class="btn btn-danger">Delete</a></td>
             <td><a href="#" class="btn btn-success">Update</a></td>
         </tr>
     }
 </table>
-<a href="#" class="btn btn-primary">New Category</a>
+<a asp-controller="Category" asp-action="CategoryAdd" class="btn btn-primary">New Category</a>
