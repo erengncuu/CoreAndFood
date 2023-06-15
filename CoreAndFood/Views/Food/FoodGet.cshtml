@@ -24,8 +24,7 @@
     <br />
 
     <b>Category</b>
-    @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
-    //@Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.V, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.V, new { @class = "form-control" })
     <br />
 
     <b>Food Descriptrion</b>

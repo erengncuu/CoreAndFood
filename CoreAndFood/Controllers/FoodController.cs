@@ -2,6 +2,7 @@
 using CoreAndFood.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList;
 
 namespace CoreAndFood.Controllers
 {
@@ -9,9 +10,9 @@ namespace CoreAndFood.Controllers
 	{
 		Context c = new Context();
 		FoodRepository foodRepository = new FoodRepository();
-		public IActionResult Index()
+		public IActionResult Index(int page=1)
 		{
-			return View(foodRepository.TList("Category"));
+			return View(foodRepository.TList("Category").ToPagedList(page,5));
 		}
 		[HttpGet]
 		public IActionResult FoodAdd()
@@ -59,6 +60,11 @@ namespace CoreAndFood.Controllers
 				ImageURL = x.ImageURL
 			};
 			return View(x);
+		}
+		public IActionResult FoodUpdate(Food f)
+		{
+			foodRepository.TUpdate(f);
+			return RedirectToAction("Index");
 		}
 
 	}
