@@ -10,11 +10,11 @@ namespace CoreAndFood.Controllers
 		Context c = new Context();
 		FoodRepository foodRepository = new FoodRepository();
 		public IActionResult Index()
-		{		
+		{
 			return View(foodRepository.TList("Category"));
 		}
 		[HttpGet]
-        public IActionResult FoodAdd()
+		public IActionResult FoodAdd()
 		{
 			List<SelectListItem> values = (from x in c.Categories.ToList()
 										   select new SelectListItem
@@ -33,10 +33,33 @@ namespace CoreAndFood.Controllers
 		}
 		public IActionResult FoodDelete(int id)
 		{
-			
-			foodRepository.TRemove(new Food {FoodId=id});
+			foodRepository.TRemove(new Food { FoodId = id });
 			return RedirectToAction("Index");
-		 }
+		}
+		public IActionResult FoodGet(int id)
+		{
+			List<SelectListItem> values = (from y in c.Categories.ToList()
+										   select new SelectListItem
+										   {
+											   Text = y.CategoryName,
+											   Value = y.CategoryId.ToString()
+										   }).ToList();
+			ViewBag.V = values;
 
-    }
+			var x = foodRepository.getT(id);
+			
+		Food f = new Food()
+			{	
+				FoodId = x.FoodId,
+				CategoryId = x.CategoryId,
+				Name = x.Name,
+				Price = x.Price,
+				Stock = x.Stock,
+				Description = x.Description,
+				ImageURL = x.ImageURL
+			};
+			return View(x);
+		}
+
+	}
 }
